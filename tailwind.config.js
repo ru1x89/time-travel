@@ -1,11 +1,32 @@
 module.exports = {
+  darkMode: false,
+  plugins: [],
   purge: [],
-  darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        gray: {
+          100: '#F8F8F8',
+          200: '#F2F2F2',
+          300: '#8B8B8B',
+          700: '#5C5C5C',
+        },
+        green: {
+          400: '#11FAA0',
+          500: '#00E089',
+        },
+        purple: {
+          400: '#786EBF',
+        },
+      },
+    },
+    fontFamily: {
+      sans: ['"Nunito"', '"Helvetica Neue"', 'Arial'],
+    },
   },
   variants: {
-    extend: {},
+    extend: {
+      textColor: ['group-hover'],
+    },
   },
-  plugins: [],
 }
