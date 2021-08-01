@@ -2,12 +2,14 @@
   <div class="p-3.5">
     <div class="flex">
       <div class="flex items-center flex-grow">
-        <div class="mr-2 text-sm">Moved post 1 form index 1 to index 2</div>
+        <div class="mr-2 text-sm">{{ description }}</div>
       </div>
 
       <div class="flex items-center">
         <div class="flex flex-col items-center">
-          <Button>Time Travel</Button>
+          <Button @click="$emit('time-travel', actionIndex)"
+            >Time Travel</Button
+          >
         </div>
       </div>
     </div>
@@ -22,6 +24,11 @@ export default {
 
   components: {
     Button,
+  },
+
+  props: {
+    actionIndex: Number,
+    description: String,
   },
 }
 </script>

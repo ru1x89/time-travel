@@ -1,8 +1,8 @@
 <template>
   <div
     class="
+      h-20
       px-2
-      py-1
       flex
       content-center
       bg-white
@@ -12,16 +12,17 @@
     "
   >
     <div class="flex w-full">
-      <div class="mx-2 flex flex-1 items-center">
-        <div class="text-gray-700 font-semibold truncate">
-          {{ item.id }}. {{ item.title }}
+      <div class="mx-2 flex flex-1 items-center overflow-hidden">
+        <div class="text-gray-700 truncate">
+          {{ item.id }} - {{ item.title }}
         </div>
       </div>
 
-      <div class="flex flex-col">
+      <div class="flex flex-col justify-center">
         <button
+          v-if="currentIndex > 0"
           class="
-            my-1
+            my-2
             rounded-md
             hover:bg-purple-400
             focus:outline-none focus:ring-2 focus:ring-purple-400
@@ -31,6 +32,13 @@
             group
           "
           type="button"
+          @click="
+            $emit('move-post', {
+              item,
+              direction: -1,
+              index: currentIndex,
+            })
+          "
         >
           <svg
             class="
@@ -55,8 +63,9 @@
         </button>
 
         <button
+          v-if="currentIndex < itemLength - 1"
           class="
-            my-1
+            my-2
             rounded-md
             hover:bg-purple-400
             focus:outline-none focus:ring-2 focus:ring-purple-400
@@ -66,6 +75,13 @@
             group
           "
           type="button"
+          @click="
+            $emit('move-post', {
+              item,
+              direction: 1,
+              index: currentIndex,
+            })
+          "
         >
           <svg
             class="
@@ -99,8 +115,8 @@ export default {
 
   props: {
     item: Object,
-    index: Number,
     itemLength: Number,
+    currentIndex: Number,
   },
 }
 </script>

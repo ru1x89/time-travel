@@ -12,7 +12,7 @@
       <slot name="card-header"></slot>
     </div>
 
-    <div class="px-4 py-5 bg-gray-100">
+    <div class="p-4 bg-gray-100">
       <slot name="card-body"></slot>
     </div>
   </div>
