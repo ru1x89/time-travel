@@ -2,7 +2,11 @@
   <div class="max-w-7xl min-h-screen mx-auto px-4 sm:px-6 lg:px-8 py-20">
     <div class="max-w-5xl mx-auto lg:flex space-y-10">
       <div class="w-full lg:w-1/2 px-2 lg:px-8">
-        <PostsContainer :posts="getPosts" @move-post="swapPosts" />
+        <PostsContainer
+          :posts="getPosts"
+          :errors="errors"
+          @move-post="swapPosts"
+        />
       </div>
 
       <div class="w-full lg:w-1/2 px-2 lg:px-8">
@@ -30,6 +34,12 @@ export default {
     ActionsContainer,
   },
 
+  data() {
+    return {
+      errors: '',
+    }
+  },
+
   created() {
     this.performPostsFetch()
   },
@@ -44,7 +54,7 @@ export default {
       try {
         await this.fetchPosts(5)
       } catch (error) {
-        this.errorMessage = 'Unable to fetch posts.'
+        this.errors = 'An error occurred. Unable to load posts.'
       }
     },
   },

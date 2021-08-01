@@ -4,7 +4,7 @@
 
     <template #card-body>
       <div class="py-3.5 text-sm text-center" v-if="actionsList.length < 1">
-        No posts sorted yet
+        You haven't moved a posts yet.
       </div>
 
       <div class="bg-white shadow overflow-hidden rounded-md">
