@@ -66,7 +66,7 @@
         shadow-md
         rounded
       "
-      v-if="errors || !posts.length"
+      v-if="errors"
     >
       <div class="flex">
         <div class="-ml-0.5 flex-shrink-0">
