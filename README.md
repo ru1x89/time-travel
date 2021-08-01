@@ -1,4 +1,4 @@
-# time-travel
+# Time Travel
 
 ## Project setup
 ```
