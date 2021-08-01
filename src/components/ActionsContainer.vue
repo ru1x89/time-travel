@@ -1,8 +1,6 @@
 <template>
   <Card>
-    <template #card-header>
-      List of actions commited
-    </template>
+    <template #card-header> List of actions commited </template>
 
     <template #card-body>
       <div class="bg-white shadow overflow-hidden rounded-md">

@@ -13,7 +13,9 @@
   >
     <div class="flex w-full">
       <div class="mx-2 flex flex-1 items-center">
-        <div class="text-gray-700 font-semibold truncate">Title goes here</div>
+        <div class="text-gray-700 font-semibold truncate">
+          {{ item.id }}. {{ item.title }}
+        </div>
       </div>
 
       <div class="flex flex-col">
@@ -95,6 +97,10 @@
 export default {
   name: 'Post',
 
-  components: {},
+  props: {
+    item: Object,
+    index: Number,
+    itemLength: Number,
+  },
 }
 </script>
