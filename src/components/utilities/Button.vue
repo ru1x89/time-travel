@@ -14,6 +14,7 @@
       ease-in-out
     "
     type="button"
+    @click="$emit('click')"
   >
     <slot></slot>
   </button>
