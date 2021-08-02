@@ -61,7 +61,7 @@ export const actions = {
 
 export const getters = {
   getPosts: (state) => state.postsList,
-  getActions: (state) => state.actionsList,
+  getActions: (state) => state.actionsList.reverse(),
 }
 
 export default new Vuex.Store({
