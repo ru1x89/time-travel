@@ -54,7 +54,8 @@ export const actions = {
 
   timeTravel: ({ commit, state: { actionsList } }, actionIndex) => {
     const { postsListSnapShot } = actionsList[actionIndex]
-
+    actionsList.splice(0, actionIndex + 1)
+    state.actionsList.reverse()
     commit('updatePosts', postsListSnapShot)
   },
 }
