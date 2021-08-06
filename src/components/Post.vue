@@ -13,7 +13,7 @@
   >
     <div class="flex w-full">
       <div class="mx-2 flex flex-1 items-center overflow-hidden">
-        <div class="text-gray-700 truncate">
+        <div data-title="post-title" class="text-gray-700 truncate">
           {{ item.id }} - {{ item.title }}
         </div>
       </div>
@@ -21,6 +21,7 @@
       <div class="flex flex-col justify-center">
         <button
           v-if="currentIndex > 0"
+          :id="`btn_move-up-${currentIndex}`"
           class="
             my-2
             rounded-md
@@ -64,6 +65,7 @@
 
         <button
           v-if="currentIndex < itemLength - 1"
+          :id="`btn_move-down-${currentIndex}`"
           class="
             my-2
             rounded-md
