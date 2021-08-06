@@ -2,7 +2,9 @@
   <div class="p-3.5">
     <div class="flex">
       <div class="flex items-center flex-grow">
-        <div class="mr-2 text-sm">{{ description }}</div>
+        <div data-action="action-description" class="mr-2 text-sm">
+          {{ description }}
+        </div>
       </div>
 
       <div class="flex items-center">
