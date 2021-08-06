@@ -15,7 +15,7 @@ describe('PostsContainer.vue', () => {
     })
   })
 
-  it('Display posts if exist', () => {
+  it('Display posts if exists', () => {
     const postItem = wrapper.findComponent(Post)
 
     expect(postItem.is(Post)).toBe(true)

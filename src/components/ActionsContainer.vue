@@ -3,7 +3,11 @@
     <template #card-header>List of actions commited</template>
 
     <template #card-body>
-      <div class="py-3.5 text-sm text-center" v-if="actionsList.length < 1">
+      <div
+        data-message="no-actions-message"
+        class="py-3.5 text-sm text-center"
+        v-if="actionsList.length < 1"
+      >
         You haven't moved a posts yet.
       </div>
 
