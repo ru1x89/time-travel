@@ -24,6 +24,16 @@ describe('Post.vue', () => {
     )
   })
 
+  it('Check emit event when press post move bottom button', () => {
+    wrapper.find('#btn_move-down-0').trigger('click')
+
+    expect(wrapper.emitted()['move-post'][0][0]).toEqual({
+      direction: 1,
+      index: 0,
+      item: props.item,
+    })
+  })
+
   it('Make sure the move-up arrow button is not rendered in first post', () => {
     const moveUpButton = wrapper.find('#btn_move-up-0')
 

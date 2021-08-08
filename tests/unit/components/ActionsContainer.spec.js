@@ -21,11 +21,19 @@ describe('ActionsContainer.vue', () => {
     )
   })
 
-  it('Check if action items are displayed correctly', () => {
+  it('Check if number of action items are displayed correctly', () => {
     wrapper.setProps({ actionsList: mockData })
 
     const actionItem = wrapper.findAllComponents(Action)
 
     expect(actionItem.length).toEqual(0)
+  })
+
+  it('Display the list of commited actions if exist', () => {
+    wrapper.setProps({ actionsList: mockData })
+
+    const actionItem = wrapper.findComponent(ActionsContainer)
+
+    expect(actionItem.is(ActionsContainer)).toBe(true)
   })
 })

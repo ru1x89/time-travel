@@ -1,5 +1,6 @@
 import { mount } from '@vue/test-utils'
 import Action from '@/components/Action.vue'
+import Button from '@/components/utilities/Button.vue'
 
 describe('Action.vue', () => {
   let wrapper
@@ -18,5 +19,11 @@ describe('Action.vue', () => {
     expect(wrapper.find('[data-action="action-description"]').text()).toEqual(
       props.description
     )
+  })
+
+  it('Test time travel button emit event when pressed', () => {
+    wrapper.findComponent(Button).trigger('click')
+
+    expect(wrapper.emitted()['time-travel']).toBeTruthy()
   })
 })
